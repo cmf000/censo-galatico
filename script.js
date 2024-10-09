@@ -8,7 +8,10 @@ async function getResponse(path) {
 async function getPlanets() {
     path = '/planets';
     let {results} = await getResponse(path);
-    planets = results.map(planet => planet.name);
-    console.log(planets)
-    return planets;
+    planetNames = results.map(planet => planet.name);
+    listPlanetsConsole(planetNames);
+}
+
+function listPlanetsConsole(planetNames) {
+    planetNames.map(name => console.log(name));
 }
