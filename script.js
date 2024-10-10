@@ -14,17 +14,7 @@ function listPlanetsConsole(planetNames) {
     planetNames.map(name => console.log(name));
 }
 
-baseURL = 'https://swapi.dev/api/';
-
-document.addEventListener("DOMContentLoaded", async function () {
-    let planets = await getPlanets();
-    let planetsBar = document.getElementById('planets');
-    let planetDetails = document.getElementById('planet-details')
-    listPlanets(planets, planetsBar, planetDetails);
-});
-
 function listPlanetDetails(planet, planetDetails) {
-    planetDetails.innerHTML = '';
     let planetDetailsList = document.createElement('ul');
     const details = [
         `Nome: ${planet.name}`,
@@ -39,6 +29,8 @@ function listPlanetDetails(planet, planetDetails) {
         planetDetailsList.appendChild(detailItem);
     });
     planetDetails.appendChild(planetDetailsList);
+    breakElement = document.createElement('hr');
+    planetDetails.appendChild(breakElement);
 }
 
 function listPlanets(planets, planetsBar, planetDetails) {
@@ -46,9 +38,38 @@ function listPlanets(planets, planetsBar, planetDetails) {
     planets.forEach(planet => {
         let planetItem = document.createElement('li');
         planetItem.innerHTML = `<button class="planet-button">${planet.name}</button>`;
-        planetItem.addEventListener('click', () => listPlanetDetails(planet, planetDetails));
+        planetItem.addEventListener('click', () => {
+            planetDetails.innerHTML = '';
+            listPlanetDetails(planet, planetDetails);
+        })
         planetsList.appendChild(planetItem);
     });
     planetsBar.appendChild(planetsList);
 }
+
+function search(searchInput, planetDetails, planets) {
+    let text = searchInput.value.trim().toLowerCase();
+    let filteredPlanets = planets.filter(planet => planet.name.trim().toLowerCase().includes(text));
+    if (filteredPlanets.length > 0) {
+        planetDetails.innerHTML = "";
+        filteredPlanets.forEach(planet => {
+            listPlanetDetails(planet, planetDetails)
+        })
+    }
+}
+
+async function init() {
+    let planets = await getPlanets();
+    let planetsBar = document.getElementById('planets');
+    let planetDetails = document.getElementById('planet-details');
+    let searchButton = document.getElementById('search-planet');
+    let searchInput = document.getElementById('search-text');
+    listPlanets(planets, planetsBar, planetDetails);
+    searchButton.addEventListener('click', () => search(searchInput, planetDetails, planets));
+
+}
+
+baseURL = 'https://swapi.dev/api/';
+
+document.addEventListener("DOMContentLoaded", init);
 
