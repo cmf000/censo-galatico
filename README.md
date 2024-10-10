@@ -3,7 +3,7 @@
 
 (x) Agora você deve começar a escrever HTML. Para cada planeta obtido na API no passo anterior, crie um botão na tela. Por enquanto este botão não precisa de nenhuma ação, basta exibir o nome do planeta no texto do botão.
 
-( ) Escreva o código JS capaz de obter os dados de um planeta ao clicar neste botão. Devem ser exibidos o nome (name), o clima (climate), a população (population) e o tipo de terreno (terrain).
+(x) Escreva o código JS capaz de obter os dados de um planeta ao clicar neste botão. Devem ser exibidos o nome (name), o clima (climate), a população (population) e o tipo de terreno (terrain).
 
 ( ) Crie um campo do tipo texto, usando a tag input e faça uma busca por planetas em modo texto. O resultado da busca deve exibir todas as informações da tarefa 3.
 
