@@ -1,7 +1,7 @@
 
 (x) Sua primeira tarefa vai ser criar uma página index.html e nela, usando JS, consumir a listagem de planetas da API. Os planetas devem ser exibidos no console do navegador como uma lista.
 
-( ) Agora você deve começar a escrever HTML. Para cada planeta obtido na API no passo anterior, crie um botão na tela. Por enquanto este botão não precisa de nenhuma ação, basta exibir o nome do planeta no texto do botão.
+(x) Agora você deve começar a escrever HTML. Para cada planeta obtido na API no passo anterior, crie um botão na tela. Por enquanto este botão não precisa de nenhuma ação, basta exibir o nome do planeta no texto do botão.
 
 ( ) Escreva o código JS capaz de obter os dados de um planeta ao clicar neste botão. Devem ser exibidos o nome (name), o clima (climate), a população (population) e o tipo de terreno (terrain).
 
