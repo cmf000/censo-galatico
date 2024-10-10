@@ -1,5 +1,3 @@
-baseURL = 'https://swapi.dev/api/';
-
 async function getResponse(path) {
     let response = await fetch(baseURL + path);
     return response.json();
@@ -15,3 +13,9 @@ async function getPlanets() {
 function listPlanetsConsole(planetNames) {
     planetNames.map(name => console.log(name));
 }
+
+baseURL = 'https://swapi.dev/api/';
+
+document.addEventListener("DOMContentLoaded", function() {
+    getPlanets();
+});
