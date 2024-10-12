@@ -5,31 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Censo Galático</h1>
-    <input id='search-text', type="text", placeholder="planeta">
-    <button id="search-planet">Procurar</button>
-    <style>
-        #planets {
-            position: fixed;
-            width: 100px;
-            display: block;
-        }
-        ul {
-            list-style: none
-        }
-        .planet-button {
-            width: 80px;
-            margin: 5px 0;
-        }
-        #planet-details {
-        display: block;
-        margin-left: 120px
-    }
-    </style>
-    <div id="planets">
+    <div id="search-container">
+        <input id='search-text', type="text", placeholder="planeta">
+        <button id="search-planet">Procurar</button>
     </div>
-    <div id="planet-details"></div>
+    <div>
+        <div id="planets">
+        </div>
+        <div id="planet-details"></div>
+    </div>
 </body>
 </html>

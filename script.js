@@ -29,8 +29,6 @@ function listPlanetDetails(planet, planetDetails) {
         planetDetailsList.appendChild(detailItem);
     });
     planetDetails.appendChild(planetDetailsList);
-    breakElement = document.createElement('hr');
-    planetDetails.appendChild(breakElement);
 }
 
 function listPlanets(planets, planetsBar, planetDetails) {
@@ -49,12 +47,16 @@ function listPlanets(planets, planetsBar, planetDetails) {
 
 function search(searchInput, planetDetails, planets) {
     let text = searchInput.value.trim().toLowerCase();
-    let filteredPlanets = planets.filter(planet => planet.name.trim().toLowerCase().includes(text));
-    if (filteredPlanets.length > 0) {
+    if (!text || text.length === 0) {
         planetDetails.innerHTML = "";
-        filteredPlanets.forEach(planet => {
+    } else {
+        let filteredPlanets = planets.filter(planet => planet.name.trim().toLowerCase().includes(text));
+        if (filteredPlanets.length > 0) {
+            planetDetails.innerHTML = "";
+            filteredPlanets.forEach(planet => {
             listPlanetDetails(planet, planetDetails)
-        })
+            })
+        }
     }
 }
 
@@ -64,6 +66,7 @@ async function init() {
     let planetDetails = document.getElementById('planet-details');
     let searchButton = document.getElementById('search-planet');
     let searchInput = document.getElementById('search-text');
+    searchInput.value = "";
     listPlanets(planets, planetsBar, planetDetails);
     searchButton.addEventListener('click', () => search(searchInput, planetDetails, planets));
 
