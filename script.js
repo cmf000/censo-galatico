@@ -16,6 +16,7 @@ function listPlanetsConsole(planetNames) {
 
 function listPlanetDetails(planet, planetDetails) {
     let planetDetailsList = document.createElement('ul');
+    planetDetailsList.classList.add('cards-list');
     const details = [
         `Nome: ${planet.name}`,
         `Clima: ${planet.climate}`,
@@ -25,6 +26,7 @@ function listPlanetDetails(planet, planetDetails) {
 
     details.forEach (detail => {
         let detailItem = document.createElement('li');
+        detailItem.classList.add('card')
         detailItem.textContent = detail;
         planetDetailsList.appendChild(detailItem);
     });
@@ -35,7 +37,7 @@ function listPlanets(planets, planetsBar, planetDetails) {
     let planetsList = document.createElement('ul');
     planets.forEach(planet => {
         let planetItem = document.createElement('li');
-        planetItem.innerHTML = `<button class="planet-button">${planet.name}</button>`;
+        planetItem.innerHTML = `<button class="sidebar-button">${planet.name}</button>`;
         planetItem.addEventListener('click', () => {
             planetDetails.innerHTML = '';
             listPlanetDetails(planet, planetDetails);
@@ -62,17 +64,17 @@ function search(searchInput, planetDetails, planets) {
 
 async function init() {
     let planets = await getPlanets();
-    let planetsBar = document.getElementById('planets');
-    let planetDetails = document.getElementById('planet-details');
-    let searchButton = document.getElementById('search-planet');
-    let searchInput = document.getElementById('search-text');
+    let planetsBar = document.getElementById('planets-bar');
+    let planetDetails = document.getElementById('planet-cards-list');
+    let searchButton = document.getElementById('search-planet-button');
+    let searchInput = document.getElementById('search-planet-text');
     searchInput.value = "";
     listPlanets(planets, planetsBar, planetDetails);
     searchButton.addEventListener('click', () => search(searchInput, planetDetails, planets));
 
 }
 
-baseURL = 'https://swapi.dev/api/';
+baseURL = 'https://swapi.dev/api';
 
 document.addEventListener("DOMContentLoaded", init);
 
