@@ -15,22 +15,26 @@ function listPlanetsConsole(planetNames) {
 }
 
 function listPlanetDetails(planet, planetDetails) {
-    let planetDetailsList = document.createElement('ul');
-    planetDetailsList.classList.add('cards-list');
-    const details = [
-        `Nome: ${planet.name}`,
+    let planetDetailsCard = document.createElement('div');
+    let planetDetailsCardHeader = document.createElement('h2');
+    let planetDetailsCardBody = document.createElement('ul');
+    planetDetailsCard.classList.add('card');
+    planetDetailsCard.appendChild(planetDetailsCardHeader);
+    planetDetailsCard.appendChild(planetDetailsCardBody);
+    
+    planetDetailsCardHeader.innerHTML = `${planet.name}`
+    const detailsBody = [
         `Clima: ${planet.climate}`,
         `População: ${planet.population}`,
         `Tipo de terreno: ${planet.terrain}`
     ];
 
-    details.forEach (detail => {
+    detailsBody.forEach (detail => {
         let detailItem = document.createElement('li');
-        detailItem.classList.add('card')
         detailItem.textContent = detail;
-        planetDetailsList.appendChild(detailItem);
+        planetDetailsCard.appendChild(detailItem);
     });
-    planetDetails.appendChild(planetDetailsList);
+    planetDetails.appendChild(planetDetailsCard);
 }
 
 function listPlanets(planets, planetsBar, planetDetails) {

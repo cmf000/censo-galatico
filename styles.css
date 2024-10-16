@@ -1,10 +1,11 @@
 :root {
-    font-size: 1em;
+    font-size: calc(0.5em + 1vmin);
 }
 
 ul{
     margin: 0;
     padding: 0;
+    text-align: left;
 }
 
 li {
@@ -66,18 +67,23 @@ h1 {
     background-color: #3f51b5;
 }
 
+.block {
+    align-items: center;
+}
+
 .sidebar {
     position: relative;
     max-width: 15rem;
     display: inline-block;
     margin: 2rem;
     vertical-align: top;
+    margin-left: 35%
 
 }
 
 .sidebar-button {
     width: 10em;
-    padding: 1rem 1.5rem;
+    padding: 1em 1.5em;
     font-size: 1.2rem;
     margin: 1rem 0;
     background-color: #3f51b5;
@@ -96,24 +102,31 @@ h1 {
     display: inline-block;
     vertical-align: top;
     border-radius: 0.5em;
-    width: 20rem;
+    max-width: 30rem;
     color: white;
     font-size: 1.2rem;
     background-color: blueviolet;
     margin: 3rem 3rem;
 }
 
-.cards{
+.card{
     display: block;
-    margin-left: 40px;
-    padding: 20px;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 0.1em;
+    border-color: rgb(129, 121, 136);
+    padding: 1.5em;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.cards-list {
+.card > h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+
+}
+
+.card-body {
     padding: 1rem 1rem;
 }
 
-.cards-list h1 {
-    margin-top: 0;
-}
