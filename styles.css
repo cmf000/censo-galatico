@@ -1,10 +1,14 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 :root {
     font-size: calc(0.5em + 1vmin);
 }
 
 ul{
-    margin: 0;
-    padding: 0;
     text-align: left;
 }
 
@@ -12,13 +16,27 @@ li {
     list-style: none;
 }
 
+.image {
+    position: fixed;
+    inset: 0;
+    object-fit:cover;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
 body {
-    background-image: url('./4151622.svg');
-    background-size: cover;
     font-family: Arial, sans-serif;
     color: #ffffff;
     margin: 1em;
     padding: 1em;
+}
+
+.body-container {
+    width: 50%;
+    margin: auto;
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
 }
 
 h1 {
@@ -30,10 +48,10 @@ h1 {
 }
 
 .search-container {
+    font-size: 2rem;
     display: block;
     position: sticky;
     top: 0;
-    z-index: 5;
     text-align: center;
 }
 
@@ -68,16 +86,17 @@ h1 {
 }
 
 .block {
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 .sidebar {
     position: relative;
     max-width: 15rem;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin: 2rem;
-    vertical-align: top;
-    margin-left: 35%
 
 }
 
@@ -99,24 +118,28 @@ h1 {
 }
 
 .cards-list-container {
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    flex-direction: column;
     border-radius: 0.5em;
     max-width: 30rem;
     color: white;
     font-size: 1.2rem;
     background-color: blueviolet;
     margin: 3rem 3rem;
+    height: fit-content;
+    width: 25%;
 }
 
 .card{
+    color: white;
     display: block;
-    margin: 10px;
+    margin: 0.5em;
     border: 2px solid;
     border-radius: 0.1em;
     border-color: rgb(129, 121, 136);
     padding: 1.5em;
     background-color: rgba(0, 0, 0, 0.7);
+    text-align: left;
 }
 
 .card > h2 {
@@ -128,5 +151,5 @@ h1 {
 
 .card-body {
     padding: 1rem 1rem;
+    text-wrap: wrap;
 }
-

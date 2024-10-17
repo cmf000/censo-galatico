@@ -15,7 +15,7 @@ function listPlanetsConsole(planetNames) {
 }
 
 function listPlanetDetails(planet, planetDetails) {
-    let planetDetailsCard = document.createElement('div');
+    let planetDetailsCard = document.createElement('button');
     let planetDetailsCardHeader = document.createElement('h2');
     let planetDetailsCardBody = document.createElement('ul');
     planetDetailsCard.classList.add('card');
