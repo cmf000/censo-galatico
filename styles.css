@@ -53,6 +53,7 @@ h1 {
     position: sticky;
     top: 0;
     text-align: center;
+    z-index: 1
 }
 
 .search-container * {
@@ -65,8 +66,7 @@ h1 {
     padding: 0.65em;
     border-radius: 0.5em;
     border: 0.1em solid #ccc;
-    margin: 0 0.65em;
-    outline: none;
+    margin: 0 0.75em;
     background-color: #222;
     color: white;
 }
@@ -104,10 +104,10 @@ h1 {
     width: 10em;
     padding: 1em 1.5em;
     font-size: 1.2rem;
-    margin: 1rem 0;
+    margin: 1em 0;
     background-color: #3f51b5;
     color: #fff;
-    border: none;
+    border: 1px solid white;
     border-radius: 0.5em;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -115,6 +115,7 @@ h1 {
 
 .sidebar-button:hover {
     background-color: #283593;
+    border: none;
 }
 
 .cards-list-container {
@@ -140,6 +141,32 @@ h1 {
     padding: 1.5em;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: left;
+    transition: 0.2s;
+    position: relative;
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card::after {
+    --icon-size: 6rem;
+    content: '';
+    background-image: url(./assets/person-icon.webp);
+    position: absolute;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    top: calc(50% - calc(var(--icon-size) / 2));
+    left: calc(50% - calc(var(--icon-size) / 2));
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card > h2 {

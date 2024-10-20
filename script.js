@@ -5,9 +5,13 @@ async function getResponse(path) {
 
 async function getPlanets() {
     path = '/planets';
-    let { results } = await getResponse(path);
-    planetNames = results.map(planet => planet.name);
-    return results;
+    const { results: planets } = await getResponse(path);
+    planets.map(planet => planet.name);
+    return planets;
+}
+
+function getPlanetNames() {
+    planetNames
 }
 
 function listPlanetsConsole(planetNames) {
