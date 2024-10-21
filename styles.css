@@ -122,13 +122,12 @@ h1 {
     display: flex;
     flex-direction: column;
     border-radius: 0.5em;
-    max-width: 30rem;
+    width: 35%;
     color: white;
     font-size: 1.2rem;
     background-color: blueviolet;
     margin: 3rem 3rem;
-    height: fit-content;
-    width: 25%;
+    height: fit-content; 
 }
 
 .card{
@@ -145,10 +144,12 @@ h1 {
     position: relative;
 }
 
+/*
 .card:hover {
     background-color: rgba(0, 0, 0, 0.1);
     color: rgba(255, 255, 255, 0.4);
 }
+
 
 .card:hover::after {
     opacity: 1;
@@ -168,6 +169,7 @@ h1 {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+*/
 
 .card > h2 {
     text-transform: uppercase;
@@ -180,3 +182,44 @@ h1 {
     padding: 1rem 1rem;
     text-wrap: wrap;
 }
+
+.card .toggle-icon {
+    position: absolute;
+    font-size: 1.2rem;
+    top: 0;
+    right: 0;
+    transition: all 0.3s;
+}
+
+.toggle-icon:hover {
+    background-color: #283593;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.residents-table {
+    display: block;
+    column-gap: 3rem;
+    
+}
+
+.header-row {
+    font-weight: bold;
+    background-color: #5c6bc0;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
